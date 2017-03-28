@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="autosService" class="ru.kpfu.itis.service.impl.AutosServiceImpl"/>
+    <bean id="bookingService" class="ru.kpfu.itis.service.impl.BookingsServiceImpl"/>
+    <bean id="driversService" class="ru.kpfu.itis.service.impl.DriversServiceImpl">
+        <constructor-arg name="driversDao" ref="driversDaoHibernate"/>
+    </bean>
+    <bean id="passengersService" class="ru.kpfu.itis.service.impl.PassengersServiceImpl"/>
+    <bean id="reviewsService" class="ru.kpfu.itis.service.impl.ReviewsServiceImpl"/>
+    <bean id="tripsService" class="ru.kpfu.itis.service.impl.TripsServiceImpl"/>
+    <bean id="usersService" class="ru.kpfu.itis.service.impl.UsersServiceImpl">
+        <constructor-arg name="usersDao" ref="usersDaoJDBC"/>
+    </bean>
+
+    <!--Hibernate implementations-->
+    <bean id="autosDaoHibernate" class="ru.kpfu.itis.dao.impl.hibernate.AutosDaoHibernateImpl"/>
+    <bean id="driversDaoHibernate" class="ru.kpfu.itis.dao.impl.hibernate.DriversDaoHibernateImpl"/>
+    <bean id="usersDaoHibernate" class="ru.kpfu.itis.dao.impl.hibernate.UserDaoHibernateImpl"/>
+
+    <!--JDBC implementations-->
+    <bean id="autosDaoJDBC" class="ru.kpfu.itis.dao.impl.hibernate.AutosDaoHibernateImpl"/>
+    <bean id="driversDaoJDBC" class="ru.kpfu.itis.dao.impl.hibernate.DriversDaoHibernateImpl"/>
+    <bean id="usersDaoJDBC" class="ru.kpfu.itis.dao.impl.hibernate.UserDaoHibernateImpl"/>
+
+</beans>

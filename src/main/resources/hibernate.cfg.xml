@@ -1,0 +1,23 @@
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost/carblacar</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.username">hospital_admin</property>
+        <property name="hibernate.connection.password">69228322</property>
+        <property name="hibernate.connection.pool_size">1</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <mapping class="ru.kpfu.itis.model.User" />
+        <mapping class="ru.kpfu.itis.model.Driver" />
+        <mapping class="ru.kpfu.itis.model.Automobile" />
+        <mapping class="ru.kpfu.itis.model.Booking" />
+        <mapping class="ru.kpfu.itis.model.Passenger" />
+        <mapping class="ru.kpfu.itis.model.Review" />
+        <mapping class="ru.kpfu.itis.model.Trip" />
+
+    </session-factory>
+
+</hibernate-configuration>
